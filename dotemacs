@@ -50,6 +50,7 @@
 ;keymaping
 (global-set-key "\M-N" 'next-buffer)
 (global-set-key "\M-P" 'previous-buffer)
+(global-set-key "\M-O" 'other-window)
 
 ;disable create backup files like
 (setq backup-inhibited t)
