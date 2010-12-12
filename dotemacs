@@ -5,6 +5,10 @@
 (setq mac-option-modifier 'control)
 (setq mac-command-modifier 'meta)
 
+;show the line number
+(global-linum-mode t)
+
+
 ;======= programming settings =======
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)) ; treat all *.h files as c++ header files
 (setq default-tab-width 4)
