@@ -16,7 +16,12 @@
 
 (defconst c-style
   '("k&r"  ; the base style inherits from
-	(c-basic-offset . 4))
+	(c-basic-offset . 4)
+    (c-cleanup-list . (brace-else-brace
+                       brace-elseif-brace
+                       empty-defun-braces
+                       defun-close-semi
+                       space-before-funcall))
 )
 (c-add-style "c-style" c-style)
 
