@@ -37,6 +37,18 @@
 	     (concat SITE_DIR "auto-complete/ac-dict"))
 (ac-config-default)
 
+;desktop config
+(desktop-save-mode t)
+(setq desktop-path             (list "~/.emacs.d/desktop/")
+	  desktop-base-file-name   "emacs.desktop"
+	  desktop-save             t)
+
+;bookmark config
+(setq bookmark-default-file "~/.emacs.d/bookmark")
+
+(require 'color-theme)
+(color-theme-subtle-hacker)
+
 ;session config
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
@@ -104,10 +116,14 @@ User buffers are those not starting with *."
 
 
 ;keymaping
-(global-set-key [M-left] 'next-user-buffer)
-(global-set-key [M-right] 'previous-user-buffer)
-(global-set-key [M-up] 'other-window)
+(global-set-key (kbd "C-;") 'previous-user-buffer)
+(global-set-key (kbd "C-'") 'next-user-buffer)
+(global-set-key (kbd "C-`") 'other-window)
 (global-set-key "\C-x\C-b" 'ibuffer)
+(global-set-key (kbd "C-,") 'point-to-register)
+(global-set-key (kbd "C-.") 'jump-to-register)
+(global-set-key (kbd "M-g") 'goto-line)
+
 
 ;disable create backup files like
 (setq backup-inhibited t)
