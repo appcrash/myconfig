@@ -46,8 +46,8 @@
 ;bookmark config
 (setq bookmark-default-file "~/.emacs.d/bookmark")
 
-(require 'color-theme)
-(color-theme-subtle-hacker)
+;(require 'color-theme)
+;(color-theme-subtle-hacker)
 
 ;session config
 (require 'session)
