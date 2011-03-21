@@ -113,7 +113,8 @@ User buffers are those not starting with *."
 (add-hook 'c++-mode-hook (lambda ()
 						        (c-set-style "c++-style")))
 
-
+;get rid of the prompt every time start making
+(setq compilation-read-command nil)
 
 ;keymaping
 (global-set-key (kbd "C-;") 'previous-user-buffer)
@@ -123,6 +124,7 @@ User buffers are those not starting with *."
 (global-set-key (kbd "C-,") 'point-to-register)
 (global-set-key (kbd "C-.") 'jump-to-register)
 (global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "<f5>") 'compile)
 
 
 ;disable create backup files like
