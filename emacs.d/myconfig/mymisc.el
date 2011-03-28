@@ -15,7 +15,8 @@
 
 ;get rid of the prompt every time start making
 (setq compilation-read-command nil)
-
+;automatic saving file before compile
+(setq compilation-ask-about-save nil)
 
 ;disable create backup files like
 (setq backup-inhibited t)
