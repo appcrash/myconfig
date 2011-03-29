@@ -10,6 +10,6 @@
 (global-set-key (kbd "C-,") 'point-to-register)
 (global-set-key (kbd "C-.") 'jump-to-register)
 (global-set-key (kbd "M-g") 'goto-line)
-(global-set-key (kbd "<f5>") 'compile)
+(global-set-key (kbd "<f5>") 'compile-safely-with-flymake)
 
 (provide 'mykeymap)

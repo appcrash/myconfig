@@ -30,4 +30,23 @@ of FILE in the current directory, suitable for creation"
 			if (equal d root)
 			return nil))))
 
+(defun compile-safely-with-flymake ()
+  "disable flymake before compiling, and restore the state when done"
+  (interactive)
+  (if (local-variable-p 'flymake-mode (current-buffer))
+	  (progn (flymake-mode 0)
+			 (call-interactively 'flymake-compile)
+			 (flymake-mode 1))
+	(call-interactively 'compile)))
+
+
+
+
+
+
+
+
+
+
+
 (provide 'myfunc)
