@@ -12,6 +12,7 @@
 (require 'mymisc)
 
 (require 'prog_cpp)
+(require 'prog_python)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
