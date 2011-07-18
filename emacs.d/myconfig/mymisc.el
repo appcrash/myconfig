@@ -1,8 +1,3 @@
-;show the line number
-(global-linum-mode t)
-;always highlight the matching parentheses
-(show-paren-mode t)
-
 ;desktop config
 (desktop-save-mode t)
 (setq desktop-path             (list "~/.emacs.d/desktop/")

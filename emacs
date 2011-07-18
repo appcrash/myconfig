@@ -9,6 +9,7 @@
 (require 'myfunc)
 (require 'myplugin)
 (require 'mykeymap)
+(require 'myview)
 (require 'mymisc)
 
 (require 'prog_cpp)
