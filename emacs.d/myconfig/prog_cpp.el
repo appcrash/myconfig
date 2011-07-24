@@ -32,6 +32,7 @@
 						        (c-set-style "c-style")))
 
 (add-hook 'c++-mode-hook (lambda ()
-						        (c-set-style "c++-style")))
+						        (c-set-style "c++-style")
+                                (bind-switch-between-header-impl)))
 
 (provide 'prog_cpp)

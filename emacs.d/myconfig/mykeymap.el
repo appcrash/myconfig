@@ -12,4 +12,7 @@
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "<f5>") 'compile-safely-with-flymake)
 
+(defun bind-switch-between-header-impl ()
+    (local-set-key (kbd "C-M-;") 'ff-find-other-file))
+
 (provide 'mykeymap)
