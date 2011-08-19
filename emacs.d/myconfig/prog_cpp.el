@@ -2,6 +2,7 @@
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)) ; treat all *.h files as c++ header files
 (setq default-tab-width 4)
 (setq tab-width 4)
+(setq ff-search-directories '("." "../inc/*" "../src/*")) ; searching path when switching between .h and .cpp by ff-find-other-file
 
 (defconst c-style
   '("k&r"  ; the base style inherits from
