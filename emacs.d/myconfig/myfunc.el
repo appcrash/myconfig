@@ -39,7 +39,11 @@ of FILE in the current directory, suitable for creation"
 			 (flymake-mode 1))
 	(call-interactively 'compile)))
 
-
+(defun switch-to-recent-buffer ()
+  "switch to the most recent buffer."
+  (interactive)
+  (switch-to-buffer (other-buffer))
+)
 
 
 

@@ -10,6 +10,7 @@
 (global-set-key (kbd "C-,") 'point-to-register)
 (global-set-key (kbd "C-.") 'jump-to-register)
 (global-set-key (kbd "M-g") 'goto-line)
+(global-set-key (kbd "M-o") 'switch-to-recent-buffer)
 (global-set-key (kbd "<f5>") 'compile-safely-with-flymake)
 
 (defun bind-switch-between-header-impl ()
