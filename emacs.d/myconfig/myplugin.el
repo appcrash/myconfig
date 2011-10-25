@@ -35,4 +35,7 @@
 (yas/initialize)
 (yas/load-directory "~/.emacs.d/yas/snippets")
 
+;auto generate member function from c++ header file
+(require 'member-function)
+
 (provide 'myplugin)

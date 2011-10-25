@@ -1,6 +1,7 @@
 ;desktop config
-(desktop-save-mode t)
+;(desktop-save-mode t)
 (setq desktop-path             (list "~/.emacs.d/desktop/")
+	  desktop-dirname          "~/.emacs.d/desktop/"
 	  desktop-base-file-name   "emacs.desktop"
 	  desktop-save             t)
 
