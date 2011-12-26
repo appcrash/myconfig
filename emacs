@@ -5,6 +5,7 @@
 (defconst SITE_DIR (concat INSTALL_DIR "site-lisp/"))
 
 (add-to-list 'load-path "~/.emacs.d/myconfig/")
+(add-to-list 'load-path "~/.emacs.d/myconfig/3rd/")
 
 (require 'myfunc)
 (require 'myplugin)

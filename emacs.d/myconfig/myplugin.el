@@ -19,6 +19,7 @@
 
 ;auto complete config
 (require 'auto-complete-config)
+(require 'ac-slime)
 (setq ac-dwim t)
 (setq ac-show-menu 0.1)
 (add-to-list 'ac-dictionary-directories
