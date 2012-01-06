@@ -39,4 +39,8 @@
 ;auto generate member function from c++ header file
 (require 'member-function)
 
+;whitespace mode
+(require 'whitespace)
+(setq whitespace-style '(empty trailing tabs))
+
 (provide 'myplugin)
