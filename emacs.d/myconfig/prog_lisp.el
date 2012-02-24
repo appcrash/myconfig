@@ -9,6 +9,8 @@
             (define-key slime-mode-map "\r" 'newline-and-indent)
 			(define-key slime-mode-map "\C-c\C-q" 'slime-close-all-parens-in-sexp)))
 
+(add-to-list 'ac-modes 'lisp-mode)
+
 (provide 'prog_lisp)
 
 
