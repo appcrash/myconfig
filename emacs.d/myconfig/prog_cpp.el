@@ -25,6 +25,9 @@
 								(add-hook 'before-save-hook 'delete-trailing-whitespace) ; avoid trailing space
 								(setq indent-tabs-mode nil) ; replace tab with space
 								(set (make-local-variable 'compile-command) (format "make -f %s"  (get-closest-pathname))) ; use the closest makefile
+                                (add-to-list 'ac-omni-completion-sources (cons "\\." '(ac-source-semantic)))
+                                (add-to-list 'ac-omni-completion-sources (cons "->"  '(ac-source-semantic)))
+                                (add-to-list 'ac-sources 'ac-source-semantic)
 								(c-toggle-hungry-state)
 								(c-toggle-auto-newline)))
 

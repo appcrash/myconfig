@@ -7,8 +7,10 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-subtle-hacker)
+
 (provide 'myview)
 
-;(require 'color-theme)
-;(color-theme-subtle-hacker)
 

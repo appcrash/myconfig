@@ -6,6 +6,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/myconfig/")
 (add-to-list 'load-path "~/.emacs.d/myconfig/3rd/")
+(add-to-list 'load-path "~/.emacs.d/myconfig/3rd/auto-complete-1.3.1/")
 
 (require 'myfunc)
 (require 'myplugin)
@@ -15,6 +16,7 @@
 
 (require 'prog_cpp)
 (require 'prog_python)
+(require 'prog_lisp)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.

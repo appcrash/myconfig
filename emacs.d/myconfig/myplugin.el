@@ -1,12 +1,16 @@
 ;cedet config, Emacs 23.2 buit-in cedet has problems
 ;download cedet and compile
-(load-file (concat SITE_DIR "cedet-1.0/common/cedet.elc"))
+;(load-file (concat SITE_DIR "cedet/common/cedet.elc"))
 (require 'cedet)
-(semantic-load-enable-minimum-features)
-(semantic-load-enable-code-helpers)
+;(semantic-load-enable-minimum-features)
+;(semantic-load-enable-code-helpers)
 (semantic-load-enable-excessive-code-helpers)
-(require 'semantic-decorate-include)
-(semantic-add-system-include "~/dev/plasticine/inc/")
+(global-semantic-stickyfunc-mode 0)
+(global-semantic-idle-completions-mode -1)
+(setq semantic-idle-scheduler-idle-time 0.5)
+(require 'semantic-ia)
+(require 'semantic-gcc)
+;(semantic-add-system-include "~/star/inc/")
 
 ;ibuffer config
 (require 'ibuf-ext)
@@ -25,6 +29,7 @@
 (add-to-list 'ac-dictionary-directories
 	     (concat SITE_DIR "auto-complete/ac-dict"))
 (ac-config-default)
+(add-to-list 'ac-modes '(common-lisp-mode))
 
 ;session config
 (require 'session)
