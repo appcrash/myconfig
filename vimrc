@@ -25,5 +25,10 @@ imap  <F4> <C-O>:bn<CR>
 nmap  <F3> :bp<CR>
 nmap  <F4> :bn<CR>
 
-colorscheme delek
 autocmd FileType c,cpp,python,ruby,perl,java autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+" colors
+colorscheme delek
+"hi TabLineFill ctermfg=LightGreen ctermbg=DarkGreen
+hi TabLine ctermfg=Blue ctermbg=White
+hi TabLineSel ctermfg=Red ctermbg=White
