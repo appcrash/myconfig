@@ -13,6 +13,8 @@
 (setq compilation-read-command nil)
 ;automatic saving file before compile
 (setq compilation-ask-about-save nil)
+;remember recent file
+(recentf-mode 1)
 
 ;disable create backup files like
 (setq backup-inhibited t)

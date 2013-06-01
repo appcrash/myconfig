@@ -1,51 +1,51 @@
-;cedet config, Emacs 23.2 buit-in cedet has problems
-;download cedet and compile
-;(load-file (concat SITE_DIR "cedet/common/cedet.elc"))
-(require 'cedet)
-;(semantic-load-enable-minimum-features)
-;(semantic-load-enable-code-helpers)
-(semantic-load-enable-excessive-code-helpers)
-(global-semantic-stickyfunc-mode 0)
-(global-semantic-idle-completions-mode -1)
-(setq semantic-idle-scheduler-idle-time 0.5)
-(require 'semantic-ia)
-(require 'semantic-gcc)
-;(semantic-add-system-include "~/star/inc/")
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+(package-initialize)                       
+(setq url-http-attempt-keepalives nil)
 
 ;ibuffer config
 (require 'ibuf-ext)
 (add-to-list 'ibuffer-never-show-predicates "^\\*")
 
+;highlight indentation
+(require 'highlight-indentation)
+(set-face-background 'highlight-indentation-face "#e3e3d3")
+(set-face-background 'highlight-indentation-current-column-face "#c3f3f3")
+
+;fill column indicator
+(setq fci-rule-column 120)
+
+;ido config
+(require 'ido)
+(ido-mode t)
+
 ; ecb config
-(setq ecb-tip-of-the-day nil)
-(global-ede-mode 1)
-(require 'ecb)
+;(setq ecb-tip-of-the-day nil)
+;(global-ede-mode 1)
+;(require 'ecb)
 
 ;auto complete config
 (require 'auto-complete-config)
-(require 'ac-slime)
+;(require 'ac-slime)
 (setq ac-dwim t)
 (setq ac-show-menu 0.1)
-(add-to-list 'ac-dictionary-directories
-	     (concat SITE_DIR "auto-complete/ac-dict"))
 (ac-config-default)
-(add-to-list 'ac-modes '(common-lisp-mode))
+(add-to-list 'ac-modes '(c-mode c++-mode java-mode common-lisp-mode))
 
 ;session config
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
 
 ;yasnippet
-(add-to-list 'load-path "~/.emacs.d/yas")
 (require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/yas/snippets")
+(yas--initialize)
+(yas-global-mode 1)
 
-;auto generate member function from c++ header file
-(require 'member-function)
 
 ;whitespace mode
-(require 'whitespace)
-(setq whitespace-style '(empty trailing tabs))
+;(require 'whitespace)
+;(setq whitespace-line-column 120)
+;(setq whitespace-style '(face empty lines-tail))
 
 (provide 'myplugin)

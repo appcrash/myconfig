@@ -1,2 +1,0 @@
-# --
-for (${1:type} ${2:it} = ${3:container}begin();$2 != $3end();$2++) $0

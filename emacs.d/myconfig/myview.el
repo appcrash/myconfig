@@ -7,9 +7,13 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-subtle-hacker)
+;(require 'color-theme)
+;(color-theme-initialize)
+;(color-theme-subtle-hacker)
+
+
+(add-to-list 'default-frame-alist '(top . 0))
+(add-to-list 'default-frame-alist '(left. 100))
 
 (provide 'myview)
 
