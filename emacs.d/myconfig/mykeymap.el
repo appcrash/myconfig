@@ -1,6 +1,17 @@
 ;remap the mac key
 (setq mac-option-modifier 'control)
+;(setq mac-option-modifier 'super)
 (setq mac-command-modifier 'meta)
+
+;remap win key
+(setq 
+    w32-pass-lwindow-to-system nil
+    w32-pass-rwindow-to-system nil
+    w32-pass-apps-to-system nil
+    w32-lwindow-modifier 'super ; Left Windows key
+    w32-rwindow-modifier 'super ; Right Windows key
+    ;w32-apps-modifier 'hyper
+    w32-apps-modifier 'super)
 
 ;keymaping
 (global-set-key (kbd "C-;") 'previous-user-buffer)
@@ -17,8 +28,9 @@
 (global-set-key (kbd "C-M-o") 'open-line)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 (global-set-key (kbd "<f5>") 'compile-safely-with-flymake)
-(global-set-key (kbd "<f11>") 'desktop-save-in-desktop-dir)
-(global-set-key (kbd "<f12>") 'desktop-read)
+(global-set-key (kbd "S-<f11>") 'desktop-save-in-desktop-dir)
+(global-set-key (kbd "<f11>") 'desktop-read)
+(global-set-key (kbd "s-g") 'switch-to-buffer)
 
 (defun bind-switch-between-header-impl ()
     (local-set-key (kbd "C-M-;") 'ff-find-other-file))

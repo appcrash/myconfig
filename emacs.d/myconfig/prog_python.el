@@ -1,17 +1,23 @@
+(setq python-indent-offset 4)
+
 (defun load-ropemacs ()
-    (interactive)
-    (if (eq system-type 'windows-nt)
-            (setq pymacs-python-command "C:\\Python27\\python.exe"))
-    (pymacs-load "ropemacs" "rope-")
-    (setq ropemacs-enable-autoimport t)
-    (add-to-list 'ac-sources 'ac-source-ropemacs)
+    ;(interactive)
+    (if (eq ropemacs-loaded 0)
+        (progn
+            (if (eq system-type 'windows-nt)
+                    (setq pymacs-python-command "C:\\Python27\\python.exe"))
+            (setq pymacs-load-history nil)
+            (pymacs-load "ropemacs" "rope-")
+            (setq ropemacs-enable-autoimport t)
+            (setq ropemacs-loaded 1)))
+        
+    (ropemacs-mode)
+    ;(add-to-list 'ac-sources 'ac-source-ropemacs)
 )
                 
 
 (add-hook 'python-mode-hook '(lambda ()
-    (fci-mode)
-    (highlight-indentation-mode)
-    (highlight-indentation-current-column-mode)
+    (load-ropemacs)
     (flymake-mode)
     (define-key python-mode-map "\C-m" 'newline-and-indent)
     (add-hook 'before-save-hook 'delete-trailing-whitespace)
@@ -22,7 +28,7 @@
 (autoload 'pymacs-eval "pymacs" nil t)
 (autoload 'pymacs-exec "pymacs" nil t)
 (autoload 'pymacs-load "pymacs" nil t)
-
+(setq ropemacs-loaded 0)
 
 
 (cond ((eq system-type 'windows-nt) (setq pyflakes-cmd "C:\\Python27\\Scripts\\pyflakes.exe"))

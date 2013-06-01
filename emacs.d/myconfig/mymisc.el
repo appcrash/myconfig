@@ -4,10 +4,17 @@
 	  desktop-dirname          "~/.emacs.d/desktop/"
 	  desktop-base-file-name   "emacs.desktop"
 	  desktop-save             t)
-
+      
+(defadvice desktop-owner (after pry-from-cold-dead-hands activate)
+  "Don't allow dead emacsen to own the desktop file."
+  (when (not (emacs-process-p ad-return-value))
+    (setq ad-return-value nil)))
+      
 ;bookmark config
 (setq bookmark-default-file "~/.emacs.d/bookmark")
 
+; take the short answer, y/n is yes/no
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;get rid of the prompt every time start making
 (setq compilation-read-command nil)

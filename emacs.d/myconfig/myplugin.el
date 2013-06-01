@@ -6,15 +6,51 @@
 
 ;ibuffer config
 (require 'ibuf-ext)
-(add-to-list 'ibuffer-never-show-predicates "^\\*")
+;(add-to-list 'ibuffer-never-show-predicates "^\\*")
+(setq ibuffer-saved-filter-groups
+  (quote (("default"
+    ("Programming" ;; prog stuff not already in MyProjectX
+     (or
+      (mode . c-mode)
+      (mode . c++-mode)
+      (mode . python-mode)
+      (mode . emacs-lisp-mode)
+      (mode . lisp-mode)
+      (mode . lua-mode)
+      (mode . sql-mode)
+      (mode . html-mode)
+      (mode . makefile-gmake-mode)
+      (mode . yaml-mode)
+      (mode . sh-mode)
+      ;; etc
+      ))
+    ("Dired"
+     (or
+      (mode . dired-mode)))
+    ("Org" ;; all org-related buffers
+     (or
+      (mode . org-mode)
+      (mode . org-agenda-mode)
+      (mode . diary-mode)
+      (mode . calendar-mode)
+      (name . "^*Fancy Diary")
+      ))
+    ("Emacs"
+     (or
+      (name . "^\\*scratch\\*$")
+      (name . "^\\*Messages\\*$")
+      (name . "^\\*ielm\\*$")
+      (mode . help-mode)))
+    ))))
+(add-hook 'ibuffer-mode-hook
+  (lambda ()
+    (ibuffer-switch-to-saved-filter-groups "default")))
 
 ;highlight indentation
-(require 'highlight-indentation)
-(set-face-background 'highlight-indentation-face "#e3e3d3")
-(set-face-background 'highlight-indentation-current-column-face "#c3f3f3")
+;(require 'highlight-indentation)
+;(set-face-background 'highlight-indentation-face "#e3e3d3")
+;(set-face-background 'highlight-indentation-current-column-face "#c3f3f3")
 
-;fill column indicator
-(setq fci-rule-column 120)
 
 ;ido config
 (require 'ido)
@@ -27,11 +63,11 @@
 
 ;auto complete config
 (require 'auto-complete-config)
-;(require 'ac-slime)
+(require 'ac-slime)
 (setq ac-dwim t)
 (setq ac-show-menu 0.1)
 (ac-config-default)
-(add-to-list 'ac-modes '(c-mode c++-mode java-mode common-lisp-mode))
+(add-to-list 'ac-modes '(c-mode c++-mode java-mode lisp-mode common-lisp-mode org-mode))
 
 ;session config
 (require 'session)
