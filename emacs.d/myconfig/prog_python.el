@@ -1,11 +1,14 @@
 (setq python-indent-offset 4)
 
+(if (eq system-type 'windows-nt)
+    (setq python-shell-interpreter "C:\\Python27\\python.exe"))
+
 (defun load-ropemacs ()
     ;(interactive)
     (if (eq ropemacs-loaded 0)
         (progn
             (if (eq system-type 'windows-nt)
-                    (setq pymacs-python-command "C:\\Python27\\python.exe"))
+                    (setq pymacs-python-command python-shell-interpreter))
             (setq pymacs-load-history nil)
             (pymacs-load "ropemacs" "rope-")
             (setq ropemacs-enable-autoimport t)
@@ -14,6 +17,8 @@
     (ropemacs-mode)
     ;(add-to-list 'ac-sources 'ac-source-ropemacs)
 )
+
+
                 
 
 (add-hook 'python-mode-hook '(lambda ()
