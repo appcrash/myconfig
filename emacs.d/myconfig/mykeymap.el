@@ -31,6 +31,7 @@
 (global-set-key (kbd "S-<f11>") 'desktop-save-in-desktop-dir)
 (global-set-key (kbd "<f11>") 'desktop-read)
 (global-set-key (kbd "s-g") 'switch-to-buffer)
+(global-set-key (kbd "s-s") 'rgrep)
 
 (defun bind-switch-between-header-impl ()
     (local-set-key (kbd "C-M-;") 'ff-find-other-file))

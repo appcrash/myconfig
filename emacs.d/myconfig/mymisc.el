@@ -30,5 +30,15 @@
 (setq auto-save-file-name-transforms
       '((".*" "~/.emacs.d/auto-save-files/" t)))
 
+(defadvice shell-quote-argument (after windows-nt-special-quote (argument) activate)
+     "Add special quotes to ARGUMENT in case the system type is 'windows-nt. REQUIRED BY rgrep under windows"
+     (when
+         (and (eq system-type 'windows-nt) (w32-shell-dos-semantics))
+       (if (string-match "[\\.~]" ad-return-value)
+           (setq ad-return-value
+	        (replace-regexp-in-string
+	         "\\([\\.~]\\)"
+	         "\\\\\\1"
+	         ad-return-value)))))
 
 (provide 'mymisc)

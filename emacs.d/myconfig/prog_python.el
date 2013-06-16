@@ -1,3 +1,7 @@
+; install rope,ropemacs, and pymacs in python, use the latest pymacs if in windows
+; install pymacs in emacs
+; install flymake-cursor in need mini buffer show errors
+
 (setq python-indent-offset 4)
 
 (if (eq system-type 'windows-nt)

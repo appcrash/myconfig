@@ -5,6 +5,9 @@
 (defconst SITE_DIR (concat INSTALL_DIR "site-lisp/"))
 (add-to-list 'load-path "~/.emacs.d/myconfig/")
 
+(if (eq system-type 'windows-nt)
+	(setenv "PATH" (concat "D:/develop/myconfig/emacs.d/binary;" (getenv "PATH"))))
+			 
 (require 'myfunc)
 (require 'myplugin)
 (require 'mykeymap)
