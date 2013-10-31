@@ -5,8 +5,11 @@
 (defconst SITE_DIR (concat INSTALL_DIR "site-lisp/"))
 (add-to-list 'load-path "~/.emacs.d/myconfig/")
 
+(setq default-directory "~/develop")
 (if (eq system-type 'windows-nt)
-	(setenv "PATH" (concat "D:/develop/myconfig/emacs.d/binary;" (getenv "PATH"))))
+	(progn
+		(setenv "PATH" (concat "D:/develop/myconfig/emacs.d/binary;" (getenv "PATH")))
+		(setq default-directory "d:/")))
 			 
 (require 'myfunc)
 (require 'myplugin)
@@ -20,8 +23,6 @@
 (require 'prog_lua)
 (require 'prog_org)
 
-
-(setq default-directory "d:/")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

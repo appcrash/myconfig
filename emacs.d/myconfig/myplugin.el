@@ -63,7 +63,6 @@
 
 ;auto complete config
 (require 'auto-complete-config)
-(require 'ac-slime)
 (setq ac-dwim t)
 (setq ac-show-menu 0.1)
 (ac-config-default)

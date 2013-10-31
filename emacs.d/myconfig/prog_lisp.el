@@ -1,14 +1,13 @@
 (cond
    ((eq system-type 'windows-nt) (setq inferior-lisp-program (concat (getenv "SBCL_HOME") "\\sbcl.exe")))
-   (t (setq inferior-lisp-program "sbcl")))
+   ((eq system-type 'darwin) (setq inferior-lisp-program "/usr/local/bin/sbcl"))
+   (t (setq inferior-lisp-program "/usr/bin/sbcl")))
 
-;(require 'slime-autoloads)
-;(slime-setup '(slime-scratch
-;               slime-editing-commands
-;               slime-indentation
-;               slime-presentations
-;               slime-references
-;               slime-repl))
+; download slime from official site instead of using emacs package install
+(add-to-list 'load-path "~/.emacs.d/myconfig/slime-2013-04-05")
+(require 'slime-autoloads)
+(require 'ac-slime)
+(slime-setup '(slime-scratch slime-editing-commands))
      
 (add-to-list 'auto-mode-alist '("\\.cl$" . common-lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.lisp$" . common-lisp-mode))
