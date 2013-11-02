@@ -1,0 +1,10 @@
+elpa/
+*.elc
+auto-save-files/*
+auto-save-list/*
+desktop/*
+.session
+ac-comphist.dat
+ede-projects.el
+bookmark
+eshell/*
