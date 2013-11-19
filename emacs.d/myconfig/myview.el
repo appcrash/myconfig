@@ -19,11 +19,12 @@
 (add-hook 'after-init-hook
           (lambda ()
             (progn
-              (set-foreground-color "white")  
+              (set-foreground-color "white")
               (set-background-color "gray15"))))
 
+; tune emacs width and height by pass argument(-geometry) in the cmdline
 (add-to-list 'default-frame-alist '(top . 0))
-(add-to-list 'default-frame-alist '(left. 100))
+(add-to-list 'default-frame-alist '(left . 0))
 
 (provide 'myview)
 

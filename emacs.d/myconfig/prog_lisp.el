@@ -5,15 +5,17 @@
 
 ; download slime from official site instead of using emacs package install
 (add-to-list 'load-path "~/.emacs.d/myconfig/slime-2013-04-05")
-(require 'slime-autoloads)
+(when (load "slime-autoloads" t)
+    (setq slime-auto-connect 'always)
+    (slime-setup '(slime-fancy)))
+
 (require 'ac-slime)
-(slime-setup '(slime-scratch slime-editing-commands))
-     
+
 (add-to-list 'auto-mode-alist '("\\.cl$" . common-lisp-mode))
 (add-to-list 'auto-mode-alist '("\\.lisp$" . common-lisp-mode))
 
 (add-hook 'slime-mode-hook
-		  (lambda ()		  
+		  (lambda ()
             (set-up-slime-ac)
             (define-key slime-mode-map "\r" 'newline-and-indent)
 			(define-key slime-mode-map "\C-c\C-q" 'slime-close-all-parens-in-sexp)))

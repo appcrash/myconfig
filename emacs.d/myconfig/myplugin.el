@@ -1,7 +1,7 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
                          ("melpa" . "http://melpa.milkbox.net/packages/")))
-(package-initialize)                       
+(package-initialize)
 (setq url-http-attempt-keepalives nil)
 
 ;ibuffer config
@@ -65,6 +65,7 @@
 (require 'auto-complete-config)
 (setq ac-dwim t)
 (setq ac-show-menu 0.1)
+(setq ac-fuzzy-enable t)
 (ac-config-default)
 (add-to-list 'ac-modes '(c-mode c++-mode java-mode lisp-mode common-lisp-mode org-mode))
 
