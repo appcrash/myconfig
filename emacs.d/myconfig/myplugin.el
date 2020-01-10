@@ -67,7 +67,7 @@
 (setq ac-show-menu 0.1)
 (setq ac-fuzzy-enable t)
 (ac-config-default)
-(add-to-list 'ac-modes '(c-mode c++-mode java-mode lisp-mode common-lisp-mode org-mode))
+(add-to-list 'ac-modes '(c-mode c++-mode java-mode lisp-mode common-lisp-mode erlang-mode org-mode))
 
 ;session config
 (require 'session)
@@ -75,7 +75,6 @@
 
 ;yasnippet
 (require 'yasnippet)
-(yas--initialize)
 (yas-global-mode 1)
 
 

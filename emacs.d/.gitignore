@@ -1,5 +1,6 @@
 elpa/
 *.elc
+*.data
 auto-save-files/*
 auto-save-list/*
 desktop/*
@@ -8,3 +9,6 @@ ac-comphist.dat
 ede-projects.el
 bookmark
 eshell/*
+
+recentf
+ido.last*
