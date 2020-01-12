@@ -46,10 +46,6 @@
   (lambda ()
     (ibuffer-switch-to-saved-filter-groups "default")))
 
-;highlight indentation
-;(require 'highlight-indentation)
-;(set-face-background 'highlight-indentation-face "#e3e3d3")
-;(set-face-background 'highlight-indentation-current-column-face "#c3f3f3")
 
 
 ;ido config
@@ -67,7 +63,8 @@
 (setq ac-show-menu 0.1)
 (setq ac-fuzzy-enable t)
 (ac-config-default)
-(add-to-list 'ac-modes '(c-mode c++-mode java-mode lisp-mode common-lisp-mode erlang-mode org-mode))
+(dolist (m '(c-mode c++-mode java-mode lisp-mode common-lisp-mode erlang-mode org-mode))
+    (add-to-list 'ac-modes m))
 
 ;session config
 (require 'session)
@@ -77,6 +74,8 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+;flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;whitespace mode
 ;(require 'whitespace)

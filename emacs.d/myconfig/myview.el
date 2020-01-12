@@ -23,8 +23,11 @@
               (set-background-color "gray15"))))
 
 ; tune emacs width and height by pass argument(-geometry) in the cmdline
-(add-to-list 'default-frame-alist '(top . 0))
-(add-to-list 'default-frame-alist '(left . 0))
+;(add-to-list 'default-frame-alist '(top . 0))
+;(add-to-list 'default-frame-alist '(left . 0))
+(add-hook 'after-init-hook  ;align emacs to middle screen
+    (lambda ()
+        (set-frame-position (selected-frame) (/ (- (display-pixel-width) (frame-pixel-width)) 2) 0)))
 
 (provide 'myview)
 

@@ -1,3 +1,10 @@
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+;(package-initialize)
+
 (require 'cl)
 (require 'compile)
 
@@ -10,7 +17,9 @@
 	(progn
 		(setenv "PATH" (concat "D:/develop/myconfig/emacs.d/binary;" (getenv "PATH")))
 		(setq default-directory "d:/")))
-			 
+
+(add-to-list 'load-path "/usr/local/bin")
+
 (require 'myfunc)
 (require 'myplugin)
 (require 'mykeymap)
@@ -35,7 +44,7 @@
  '(initial-buffer-choice t)
  '(package-selected-packages
    (quote
-    (ivy-erlang-complete ac-slime jedi yasnippet-snippets slime session elisp-slime-nav auto-complete)))
+    (pymacs flycheck ac-slime jedi yasnippet-snippets slime session elisp-slime-nav auto-complete)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

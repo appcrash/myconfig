@@ -1,6 +1,7 @@
-(require 'ivy-erlang-complete)
-(add-hook 'erlang-mode-hook #'ivy-erlang-complete-init)
-;; automatic update completion data after save
-(add-hook 'after-save-hook #'ivy-erlang-complete-reparse)
+(add-hook 'erlang-mode-hook 
+  (lambda ()
+    (add-hook 'before-save-hook 'delete-trailing-whitespace)
+    (define-key erlang-mode-map "\C-m" 'newline-and-indent)
+    (setq erlang-indent-level 2)))
 
 (provide 'prog_erlang)
