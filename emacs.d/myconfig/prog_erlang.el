@@ -1,6 +1,6 @@
-(add-hook 'erlang-mode-hook 
+(add-hook 'erlang-mode-hook
   (lambda ()
-    (add-hook 'before-save-hook 'delete-trailing-whitespace)
+    (delete-trailing-whitespace-local)
     (define-key erlang-mode-map "\C-m" 'newline-and-indent)
     (setq erlang-indent-level 2)))
 

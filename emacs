@@ -18,7 +18,6 @@
 		(setenv "PATH" (concat "D:/develop/myconfig/emacs.d/binary;" (getenv "PATH")))
 		(setq default-directory "d:/")))
 
-(add-to-list 'load-path "/usr/local/bin")
 
 (require 'myfunc)
 (require 'myplugin)

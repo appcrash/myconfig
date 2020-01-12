@@ -5,35 +5,38 @@
 (setq ff-search-directories '("." "../inc/*" "../src/*")) ; searching path when switching between .h and .cpp by ff-find-other-file
 
 (defconst c-style
-  '("k&r"  ; the base style inherits from
-	(c-basic-offset . 4)
-    (c-cleanup-list . (brace-else-brace
-                       brace-elseif-brace
-                       empty-defun-braces   ; if function def is empty, compact the braces together
-                       defun-close-semi)))
-)
+ '("k&r"  ; the base style inherits from
+     (c-basic-offset . 4)
+     (c-cleanup-list . (brace-else-brace
+                        brace-elseif-brace
+                        empty-defun-braces   ; if function def is empty, compact the braces together
+                        defun-close-semi)))
+ )
 (c-add-style "c-style" c-style)
 
 (defconst c++-style
-  '("c-style"
-	(c-offsets-alist . ((inline-open . 0))))   ; the in-class def looks like class def other than substatement
-)
+ '("c-style"
+     (c-offsets-alist . ((inline-open . 0))))   ; the in-class def looks like class def other than substatement
+ )
 
 (c-add-style "c++-style" c++-style)
 
-(add-hook 'c-mode-common-hook (lambda ()
-								(add-hook 'before-save-hook 'delete-trailing-whitespace) ; avoid trailing space
-								(setq indent-tabs-mode nil) ; replace tab with space
-								(set (make-local-variable 'compile-command) (format "make -f %s"  (get-closest-pathname))) ; use the closest makefile
-								(c-toggle-hungry-state)
-								(c-toggle-auto-newline)))
+(add-hook 'c-mode-common-hook
+	  (lambda ()
+	    (delete-trailing-whitespace-local) ; avoid trailing space
+	    (setq indent-tabs-mode nil) ; replace tab with space
+	    (set (make-local-variable 'compile-command) (format "make -f %s"  (get-closest-pathname))) ; use the closest makefile
+	    (c-toggle-hungry-state)
+	    (c-toggle-auto-newline)))
 
 
-(add-hook 'c-mode-hook (lambda ()
-						        (c-set-style "c-style")))
+(add-hook 'c-mode-hook
+	  (lambda ()
+	    (c-set-style "c-style")))
 
-(add-hook 'c++-mode-hook (lambda ()
-						        (c-set-style "c++-style")
-                                (bind-switch-between-header-impl)))
+(add-hook 'c++-mode-hook
+	  (lambda ()
+	    (c-set-style "c++-style")
+	    (bind-switch-between-header-impl)))
 
 (provide 'prog_cpp)

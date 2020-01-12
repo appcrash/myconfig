@@ -17,19 +17,19 @@
             (pymacs-load "ropemacs" "rope-")
             (setq ropemacs-enable-autoimport t)
             (setq ropemacs-loaded 1)))
-        
+
     (ropemacs-mode)
     ;(add-to-list 'ac-sources 'ac-source-ropemacs)
 )
 
 
-                
+
 
 (add-hook 'python-mode-hook '(lambda ()
     (load-ropemacs)
     (flymake-mode)
     (define-key python-mode-map "\C-m" 'newline-and-indent)
-    (add-hook 'before-save-hook 'delete-trailing-whitespace)
+    (delete-trailing-whitespace-local)
 ))
 
 (autoload 'pymacs-apply "pymacs")
@@ -42,19 +42,17 @@
 
 (cond ((eq system-type 'windows-nt) (setq pyflakes-cmd "C:\\Python27\\Scripts\\pyflakes.exe"))
       (t (setq pyflakes-cmd "pyflakes")))
-      
-(when (load "flymake" t) 
-         (defun flymake-pyflakes-init () 
-           (let* ((temp-file (flymake-init-create-temp-buffer-copy 
-                              'flymake-create-temp-inplace)) 
-              (local-file (file-relative-name 
-                           temp-file 
-                           (file-name-directory buffer-file-name)))) 
-             (list pyflakes-cmd (list local-file)))) 
 
-         (add-to-list 'flymake-allowed-file-name-masks 
+(when (load "flymake" t)
+         (defun flymake-pyflakes-init ()
+           (let* ((temp-file (flymake-init-create-temp-buffer-copy
+                              'flymake-create-temp-inplace))
+              (local-file (file-relative-name
+                           temp-file
+                           (file-name-directory buffer-file-name))))
+             (list pyflakes-cmd (list local-file))))
+
+         (add-to-list 'flymake-allowed-file-name-masks
                   '("\\.py\\'" flymake-pyflakes-init)))
 
 (provide 'prog_python)
-
-

@@ -55,6 +55,10 @@ Also returns nil if pid is nil."
             (setq cmd (cdr attr))))
       (if (and cmd (or (string= "emacs" cmd) (string= "emacs.exe" cmd))) t))))
 
+(defun delete-trailing-whitespace-local ()
+  " delete trailing white space in local hook other than gloal one"
+  (add-hook 'before-save-hook 'delete-trailing-whitespace nil t))
+
 
 
 
