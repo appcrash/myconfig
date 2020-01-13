@@ -20,6 +20,12 @@
             (define-key slime-mode-map "\r" 'newline-and-indent)
 			(define-key slime-mode-map "\C-c\C-q" 'slime-close-all-parens-in-sexp)))
 
+
+(add-hook 'emacs-lisp-mode-hook
+	  (lambda ()
+	    (delete-trailing-whitespace-local)))
+(add-hook 'lisp-mode-hook
+	  (lambda ()
+	    (delete-trailing-whitespace-local)))
+
 (provide 'prog_lisp)
-
-

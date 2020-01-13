@@ -22,7 +22,6 @@
 (require 'myfunc)
 (require 'myplugin)
 (require 'mykeymap)
-(require 'myview)
 (require 'mymisc)
 
 (require 'prog_cpp)
@@ -51,3 +50,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:inherit nil :stipple nil :background "White" :foreground "Black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "apple" :family "DejaVu Sans Mono")))))
+
+
+
+
+
+; ensure myview comes last, otherwise the size isn't correct
+(require 'myview)

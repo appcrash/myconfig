@@ -22,13 +22,22 @@
               (set-foreground-color "white")
               (set-background-color "gray15"))))
 
-; tune emacs width and height by pass argument(-geometry) in the cmdline
-;(add-to-list 'default-frame-alist '(top . 0))
-;(add-to-list 'default-frame-alist '(left . 0))
-(add-hook 'after-init-hook  ;align emacs to middle screen
-    (lambda ()
-        (set-frame-position (selected-frame) (/ (- (display-pixel-width) (frame-pixel-width)) 2) 0)))
+
+;align emacs to middle screen
+(add-hook 'after-init-hook
+	  (let* (
+		 (scale-factor 0.8)
+		 (dw (display-pixel-width))
+		 (dh (display-pixel-height))
+		 (cw (frame-char-width))
+		 (ch (frame-char-height))
+		 (width (truncate (* (/ dw cw) scale-factor)))
+		 (height (truncate (/ dh ch)))
+		 (posx (truncate (* dw (/ (- 1 scale-factor) 2))))
+		 (sf (selected-frame))
+		 )
+    	    (set-frame-size sf width height)
+	    (set-frame-position sf posx 0)
+	    ))
 
 (provide 'myview)
-
-
