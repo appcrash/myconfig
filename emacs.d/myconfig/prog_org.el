@@ -2,6 +2,7 @@
 (setq mytodo_file (concat org-root "todo.org"))
 (setq org-agenda-files  (list mytodo_file))
 (setq org-default-notes-file (concat org-root "note.org"))
+(setq org-log-done t)
 
 (global-set-key (kbd "<f12>") (lambda () (interactive) (find-file mytodo_file)))
 

@@ -24,13 +24,14 @@
 (global-set-key (kbd "C-Z") 'undo)
 (global-set-key (kbd "M-g") 'goto-line)
 (global-set-key (kbd "M-o") 'switch-to-recent-buffer)
-(global-set-key (kbd "C-o") 'split-line)
+(global-set-key (kbd "C-o") 'vim-like-open-line)
 (global-set-key (kbd "C-M-o") 'open-line)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
 (global-set-key (kbd "<f5>") 'compile-safely-with-flymake)
 (global-set-key (kbd "S-<f11>") 'desktop-save-in-desktop-dir)
 (global-set-key (kbd "<f11>") 'desktop-read)
 (global-set-key (kbd "C-/") 'comment-dwim)
+(global-set-key (kbd "C-S-o") 'pop-global-mark)
 
 
 ;super key
@@ -39,7 +40,6 @@
 (global-set-key (kbd "s-s") 'rgrep)
 (global-set-key (kbd "s-1") 'delete-other-windows)
 (global-set-key (kbd "s-2") 'split-window-below)
-
 
 (defun bind-switch-between-header-impl ()
     (local-set-key (kbd "C-M-;") 'ff-find-other-file))

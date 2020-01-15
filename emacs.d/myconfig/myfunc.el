@@ -56,9 +56,14 @@ Also returns nil if pid is nil."
       (if (and cmd (or (string= "emacs" cmd) (string= "emacs.exe" cmd))) t))))
 
 (defun delete-trailing-whitespace-local ()
-  " delete trailing white space in local hook other than gloal one"
+  "Delete trailing white space in local hook other than gloal one."
   (add-hook 'before-save-hook 'delete-trailing-whitespace nil t))
 
+(defun vim-like-open-line ()
+  "Open a line above and indent smart indent to first non-tab character."
+  (interactive)
+  (back-to-indentation)
+  (split-line))
 
 
 
