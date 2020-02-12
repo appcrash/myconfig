@@ -50,6 +50,7 @@
 
 ;ido config
 (require 'ido)
+(setq ido-auto-merge-work-directories-length -1) ; disable suggestions
 (ido-mode t)
 
 ; ecb config

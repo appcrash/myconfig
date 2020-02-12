@@ -26,6 +26,9 @@
 ;disable create backup files like
 (setq backup-inhibited t)
 
+;open new file without "confirm" prompt
+(setq confirm-nonexistent-file-or-buffer nil)
+
 ;the annoying autosave files directory, *NOTE* the directory must exist!
 (setq auto-save-file-name-transforms
       '((".*" "~/.emacs.d/auto-save-files/" t)))
