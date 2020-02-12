@@ -42,7 +42,7 @@
  '(initial-buffer-choice t)
  '(package-selected-packages
    (quote
-    (pymacs flycheck ac-slime jedi yasnippet-snippets slime session elisp-slime-nav auto-complete)))
+    (geiser pymacs flycheck ac-slime jedi yasnippet-snippets slime session elisp-slime-nav auto-complete)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -53,7 +53,9 @@
 
 
 
-
+; let local version of ".emacs" to override my default config
+; it exists due to OS/Machine Env variation
+(load-dot-emacs-local)
 
 ; ensure myview comes last, otherwise the size isn't correct
 (require 'myview)

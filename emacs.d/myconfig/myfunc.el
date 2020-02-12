@@ -65,6 +65,10 @@ Also returns nil if pid is nil."
   (back-to-indentation)
   (split-line))
 
+(defun load-dot-emacs-local ()
+  "Load config in ~/.emacs.local which is used to keep .emacs more general"
+  (let ((fp "~/.emacs.local"))
+    (when (file-exists-p fp) (load-file fp))))
 
 
 

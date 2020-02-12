@@ -1,6 +1,6 @@
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
                          ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+                         ("melpa" . "http://melpa.org/packages/")))
 (package-initialize)
 (setq url-http-attempt-keepalives nil)
 
@@ -77,9 +77,10 @@
 ;flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-;whitespace mode
-;(require 'whitespace)
-;(setq whitespace-line-column 120)
-;(setq whitespace-style '(face empty lines-tail))
+;geiser for scheme(local)
+;(setq geiser-active-implementations '(chez))
+;(setq geiser-scheme-implementation 'chez)
+;(setq geiser-chez-binary "/usr/local/bin/chez-scheme")
+
 
 (provide 'myplugin)
