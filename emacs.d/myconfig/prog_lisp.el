@@ -21,11 +21,9 @@
 			(define-key slime-mode-map "\C-c\C-q" 'slime-close-all-parens-in-sexp)))
 
 
-(add-hook 'emacs-lisp-mode-hook
-	  (lambda ()
-	    (delete-trailing-whitespace-local)))
-(add-hook 'lisp-mode-hook
-	  (lambda ()
-	    (delete-trailing-whitespace-local)))
+(mapcar (lambda (hook)
+       (add-hook hook (lambda () (delete-trailing-whitespace-local))))
+     (list 'emacs-lisp-mode-hook 'list-mode-hook 'scheme-mode-hook))
+
 
 (provide 'prog_lisp)
