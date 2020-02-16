@@ -31,7 +31,7 @@
 (global-set-key (kbd "S-<f11>") 'desktop-save-in-desktop-dir)
 (global-set-key (kbd "<f11>") 'desktop-read)
 (global-set-key (kbd "C-/") 'comment-dwim)
-(global-set-key (kbd "C-O") 'pop-global-mark)
+(global-set-key (kbd "C-S-o") 'pop-global-mark)
 (global-set-key (kbd "M-W") 'kill-region)
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
