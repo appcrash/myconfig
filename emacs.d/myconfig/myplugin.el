@@ -78,6 +78,10 @@
 ;flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;flyspell
+(dolist (hook '(LaTeX-mode-hook))
+  (add-hook hook (lambda () (flyspell-mode 1))))
+
 ;geiser for scheme(local)
 ;(setq geiser-active-implementations '(chez))
 ;(setq geiser-scheme-implementation 'chez)
