@@ -18,10 +18,8 @@
 		(setenv "PATH" (concat "D:/develop/myconfig/emacs.d/binary;" (getenv "PATH")))
 		(setq default-directory "d:/")))
 
-
 (require 'myfunc)
 (require 'myplugin)
-(require 'mykeymap)
 (require 'mymisc)
 
 (require 'prog_cpp)
@@ -30,6 +28,10 @@
 (require 'prog_lua)
 (require 'prog_org)
 (require 'prog_erlang)
+(require 'prog_latex)
+
+
+(require 'mykeymap)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

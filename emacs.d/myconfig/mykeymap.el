@@ -43,6 +43,32 @@
 (global-set-key (kbd "s-1") 'delete-other-windows)
 (global-set-key (kbd "s-2") 'split-window-below)
 
+;latex mode
+(add-hook 'LaTeX-mode-hook
+      (lambda()
+        (local-set-key [C-tab] 'TeX-complete-symbol)))
+
+;python mode
+(add-hook 'python-mode-hook '(lambda ()
+    (define-key python-mode-map "\C-m" 'newline-and-indent)
+))
+
+;lua mode
+(add-hook 'lua-mode-hook '(lambda ()
+    (define-key lua-mode-map "\C-m" 'newline-and-indent)
+    ))
+
+;org mode
+(global-set-key (kbd "<f12>") (lambda () (interactive) (find-file mytodo_file)))
+(add-hook 'org-mode-hook (lambda ()
+  	(local-set-key "\C-cl" 'org-store-link)
+	(local-set-key "\C-cc" 'org-capture)
+	(local-set-key "\C-ca" 'org-agenda)
+	(local-set-key "\C-cb" 'org-iswitchb)
+))
+
+
+
 (defun bind-switch-between-header-impl ()
     (local-set-key (kbd "C-M-;") 'ff-find-other-file))
 

@@ -28,7 +28,6 @@
 (add-hook 'python-mode-hook '(lambda ()
     (load-ropemacs)
     (flymake-mode)
-    (define-key python-mode-map "\C-m" 'newline-and-indent)
     (delete-trailing-whitespace-local)
 ))
 
