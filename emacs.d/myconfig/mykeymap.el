@@ -67,6 +67,9 @@
 	(local-set-key "\C-cb" 'org-iswitchb)
 ))
 
+;smartparens
+(define-key smartparens-mode-map (kbd "C-M-a") 'sp-beginning-of-sexp)
+(define-key smartparens-mode-map (kbd "C-M-e") 'sp-end-of-sexp)
 
 
 (defun bind-switch-between-header-impl ()

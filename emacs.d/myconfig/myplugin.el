@@ -82,6 +82,11 @@
 (dolist (hook '(LaTeX-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
 
+;smartparens
+(dolist (hook '(org-mode-hook LaTeX-mode-hook))
+  (add-hook hook (lambda () (smartparens-mode))))
+
+
 ;geiser for scheme(local)
 ;(setq geiser-active-implementations '(chez))
 ;(setq geiser-scheme-implementation 'chez)
