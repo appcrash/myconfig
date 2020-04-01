@@ -15,13 +15,11 @@
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
 (setq custom-theme-directory "~/.emacs.d/myconfig/")
-;(load-theme 'tsdh-dark)
-(add-hook 'after-init-hook
-          (lambda ()
-            (progn
-              (set-foreground-color "white")
-              (set-background-color "gray15"))))
 
+; need to install doom-themes first
+(load-theme 'doom-dark+ t)
+(doom-modeline-mode 1)
+(setq doom-modeline-minor-modes t)
 
 ;align emacs to middle screen
 (add-hook 'after-init-hook

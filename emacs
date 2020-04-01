@@ -44,14 +44,14 @@
  '(initial-buffer-choice t)
  '(package-selected-packages
    (quote
-    (smartparens auctex geiser pymacs flycheck ac-slime jedi yasnippet-snippets slime session elisp-slime-nav auto-complete)))
+    (doom-modeline smartparens auctex geiser pymacs flycheck ac-slime jedi yasnippet-snippets slime session elisp-slime-nav auto-complete)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :stipple nil :background "White" :foreground "Black" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "apple" :family "DejaVu Sans Mono")))))
+ '(default ((t (:inherit nil :stipple nil :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 130 :width normal :foundry "apple" :family "DejaVu Sans Mono")))))
 
 
 
