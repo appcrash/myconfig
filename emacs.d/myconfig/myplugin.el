@@ -53,19 +53,20 @@
 (setq ido-auto-merge-work-directories-length -1) ; disable suggestions
 (ido-mode t)
 
-; ecb config
-;(setq ecb-tip-of-the-day nil)
-;(global-ede-mode 1)
-;(require 'ecb)
 
 ;auto complete config
-(require 'auto-complete-config)
-(setq ac-dwim t)
-(setq ac-show-menu 0.1)
-(setq ac-fuzzy-enable t)
-(ac-config-default)
-(dolist (m '(c-mode c++-mode java-mode lisp-mode common-lisp-mode erlang-mode org-mode))
-    (add-to-list 'ac-modes m))
+;(require 'auto-complete-config)
+;(setq ac-dwim t)
+;(setq ac-show-menu 0.1)
+;(setq ac-fuzzy-enable t)
+;(ac-config-default)
+;(dolist (m '(c-mode c++-mode java-mode lisp-mode common-lisp-mode erlang-mode org-mode))
+;    (add-to-list 'ac-modes m))
+
+;company mode
+(require 'company)
+(global-company-mode)
+(setq company-idle-delay 0)
 
 ;session config
 (require 'session)
@@ -87,14 +88,12 @@
   (add-hook hook (lambda () (smartparens-mode))))
 
 ;rtags
-(require 'ac-rtags)
-(require 'helm-rtags)
+(require 'company-rtags)
 (dolist (hook '(c-mode-common-hook))
   (add-hook hook (lambda () 
-    (add-to-list 'ac-sources 'ac-source-rtags)
+    (push 'company-rtags company-backends)
 )))
 (setq rtags-completions-enabled t)
-(setq rtags-display-result-backend 'helm)
 
 
 ;geiser for scheme(local)

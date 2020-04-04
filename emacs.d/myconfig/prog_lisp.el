@@ -9,16 +9,14 @@
     (setq slime-auto-connect 'always)
     (slime-setup '(slime-fancy)))
 
-(require 'ac-slime)
-
-(add-to-list 'auto-mode-alist '("\\.cl$" . common-lisp-mode))
-(add-to-list 'auto-mode-alist '("\\.lisp$" . common-lisp-mode))
-
-(add-hook 'slime-mode-hook
-		  (lambda ()
-            (set-up-slime-ac)
-            (define-key slime-mode-map "\r" 'newline-and-indent)
-			(define-key slime-mode-map "\C-c\C-q" 'slime-close-all-parens-in-sexp)))
+;(require 'ac-slime)
+;(add-to-list 'auto-mode-alist '("\\.cl$" . common-lisp-mode))
+;(add-to-list 'auto-mode-alist '("\\.lisp$" . common-lisp-mode))
+;(add-hook 'slime-mode-hook
+;		  (lambda ()
+;            (set-up-slime-ac)
+;            (define-key slime-mode-map "\r" 'newline-and-indent)
+;            (define-key slime-mode-map "\C-c\C-q" 'slime-close-all-parens-in-sexp)))
 
 
 (mapcar (lambda (hook)

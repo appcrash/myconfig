@@ -44,7 +44,7 @@
  '(initial-buffer-choice t)
  '(package-selected-packages
    (quote
-    (helm-rtags ac-rtags doom-modeline doom-themes smartparens auctex geiser pymacs flycheck ac-slime jedi yasnippet-snippets slime session elisp-slime-nav auto-complete)))
+    (company-rtags company doom-modeline doom-themes smartparens auctex geiser pymacs flycheck jedi yasnippet-snippets slime session elisp-slime-nav)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
