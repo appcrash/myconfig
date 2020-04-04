@@ -83,8 +83,18 @@
   (add-hook hook (lambda () (flyspell-mode 1))))
 
 ;smartparens
-(dolist (hook '(org-mode-hook LaTeX-mode-hook))
+(dolist (hook '(c-mode-common-hook python-mode-hook org-mode-hook LaTeX-mode-hook))
   (add-hook hook (lambda () (smartparens-mode))))
+
+;rtags
+(require 'ac-rtags)
+(require 'helm-rtags)
+(dolist (hook '(c-mode-common-hook))
+  (add-hook hook (lambda () 
+    (add-to-list 'ac-sources 'ac-source-rtags)
+)))
+(setq rtags-completions-enabled t)
+(setq rtags-display-result-backend 'helm)
 
 
 ;geiser for scheme(local)

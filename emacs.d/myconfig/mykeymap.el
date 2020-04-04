@@ -34,6 +34,7 @@
 (global-set-key (kbd "C-S-o") 'pop-global-mark)
 (global-set-key (kbd "M-W") 'kill-region)
 (global-set-key (kbd "C-w") 'backward-kill-word)
+(global-set-key (kbd "M-x") 'try-helm-M-x) ;; caution!
 
 
 ;super key

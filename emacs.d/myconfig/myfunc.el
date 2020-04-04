@@ -70,7 +70,11 @@ Also returns nil if pid is nil."
   (let ((fp "~/.emacs.local"))
     (when (file-exists-p fp) (load-file fp))))
 
-
+(defun try-helm-M-x ()
+  "try to use helm-M-x when M-x pressed, fallback to vanilla if helm not installed"
+  (interactive)
+  (let ((fn (if (fboundp 'helm-M-x) 'helm-M-x 'execute-extended-command)))
+    (call-interactively fn)))
 
 
 
