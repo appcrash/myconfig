@@ -26,6 +26,7 @@
 	    (delete-trailing-whitespace-local) ; avoid trailing space
 	    (setq indent-tabs-mode nil) ; replace tab with space
 	    (set (make-local-variable 'compile-command) (format "make -f %s"  (get-closest-pathname))) ; use the closest makefile
+        (bind-rtags-keymapping)
 	    (c-toggle-hungry-state)
 	    (c-toggle-auto-newline)))
 

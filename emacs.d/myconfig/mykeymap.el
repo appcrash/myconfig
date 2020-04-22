@@ -76,4 +76,7 @@
 (defun bind-switch-between-header-impl ()
     (local-set-key (kbd "C-M-;") 'ff-find-other-file))
 
+(defun bind-rtags-keymapping ()
+    (local-set-key (kbd "C-M-j") 'rtags-find-symbol-at-point))
+
 (provide 'mykeymap)
