@@ -33,6 +33,9 @@
 (setq auto-save-file-name-transforms
       '((".*" "~/.emacs.d/auto-save-files/" t)))
 
+;disable creating lock files like ".#xxxx"
+(setq create-lockfiles nil)
+
 (defadvice shell-quote-argument (after windows-nt-special-quote (argument) activate)
      "Add special quotes to ARGUMENT in case the system type is 'windows-nt. REQUIRED BY rgrep under windows"
      (when
