@@ -17,6 +17,7 @@
       (mode . emacs-lisp-mode)
       (mode . lisp-mode)
       (mode . lua-mode)
+      (mode . erlang-mode)
       (mode . sql-mode)
       (mode . html-mode)
       (mode . makefile-gmake-mode)
