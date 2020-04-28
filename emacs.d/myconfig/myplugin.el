@@ -85,8 +85,10 @@
   (add-hook hook (lambda () (flyspell-mode 1))))
 
 ;smartparens
+(require 'smartparens)
 (dolist (hook '(c-mode-common-hook python-mode-hook org-mode-hook LaTeX-mode-hook))
   (add-hook hook (lambda () (smartparens-mode))))
+(sp-local-pair '(c-mode c++-mode) "{" nil :actions nil) ; disable "{}" auto pair as it may conflict with cedet
 
 ;rtags
 (require 'company-rtags)
