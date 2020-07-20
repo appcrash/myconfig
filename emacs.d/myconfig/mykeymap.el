@@ -47,7 +47,8 @@
 ;latex mode
 (add-hook 'LaTeX-mode-hook
       (lambda()
-        (local-set-key [C-tab] 'TeX-complete-symbol)))
+        (local-set-key [C-tab] 'TeX-complete-symbol)
+        (local-set-key [f5] 'Tex-command-run-all)))
 
 ;python mode
 (add-hook 'python-mode-hook '(lambda ()
@@ -77,6 +78,7 @@
     (local-set-key (kbd "C-M-;") 'ff-find-other-file))
 
 (defun bind-rtags-keymapping ()
-    (local-set-key (kbd "C-M-j") 'rtags-find-symbol-at-point))
+    (local-set-key (kbd "C-M-j") 'rtags-find-symbol-at-point)
+    (local-set-key (kbd "C-M-r") 'rtags-rename-symbol))
 
 (provide 'mykeymap)
