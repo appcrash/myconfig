@@ -48,7 +48,10 @@
 (add-hook 'LaTeX-mode-hook
       (lambda()
         (local-set-key [C-tab] 'TeX-complete-symbol)
-        (local-set-key [f5] 'Tex-command-run-all)))
+        (local-set-key [f5] (lambda () 
+            (interactive)
+            (save-buffer)
+            (TeX-command-run-all nil)))))
 
 ;python mode
 (add-hook 'python-mode-hook '(lambda ()
