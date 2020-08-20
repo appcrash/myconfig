@@ -72,6 +72,12 @@
 	(local-set-key "\C-cb" 'org-iswitchb)
 ))
 
+;hs minor mode
+(add-hook 'hs-minor-mode-hook (lambda ()
+    (local-set-key (kbd "M-\/") 'hs-toggle-hiding)
+    (local-set-key (kbd "C-M-\/") 'hs-hide-all)
+))
+
 ;smartparens
 (define-key smartparens-mode-map (kbd "C-M-a") 'sp-beginning-of-sexp)
 (define-key smartparens-mode-map (kbd "C-M-e") 'sp-end-of-sexp)
