@@ -1,5 +1,3 @@
-; install rope,ropemacs, and pymacs in python, use the latest pymacs if in windows
-; install pymacs in emacs
 ; install flymake-cursor in need mini buffer show errors
 
 (setq python-indent-offset 4)
@@ -7,36 +5,17 @@
 (if (eq system-type 'windows-nt)
     (setq python-shell-interpreter "C:\\Python27\\python.exe"))
 
-(defun load-ropemacs ()
-    ;(interactive)
-    (if (eq ropemacs-loaded 0)
-        (progn
-            (if (eq system-type 'windows-nt)
-                    (setq pymacs-python-command python-shell-interpreter))
-            (setq pymacs-load-history nil)
-            (pymacs-load "ropemacs" "rope-")
-            (setq ropemacs-enable-autoimport t)
-            (setq ropemacs-loaded 1)))
-
-    (ropemacs-mode)
-    ;(add-to-list 'ac-sources 'ac-source-ropemacs)
-)
-
-
+(defun add-jedi-company ()
+  (when (boundp 'company-backends)
+    (add-to-list 'company-backends 'company-jedi)))
 
 
 (add-hook 'python-mode-hook '(lambda ()
-    (load-ropemacs)
     (flymake-mode)
+    (hs-minor-mode 't)
+    (add-jedi-company)
     (delete-trailing-whitespace-local)
 ))
-
-(autoload 'pymacs-apply "pymacs")
-(autoload 'pymacs-call "pymacs")
-(autoload 'pymacs-eval "pymacs" nil t)
-(autoload 'pymacs-exec "pymacs" nil t)
-(autoload 'pymacs-load "pymacs" nil t)
-(setq ropemacs-loaded 0)
 
 
 (cond ((eq system-type 'windows-nt) (setq pyflakes-cmd "C:\\Python27\\Scripts\\pyflakes.exe"))
@@ -53,5 +32,7 @@
 
          (add-to-list 'flymake-allowed-file-name-masks
                   '("\\.py\\'" flymake-pyflakes-init)))
+
+(setq python-indent-guess-indent-offset-verbose nil)
 
 (provide 'prog_python)
