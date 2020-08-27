@@ -6,7 +6,10 @@
     (setq python-shell-interpreter "C:\\Python27\\python.exe"))
 
 ; to use python3 as jedi intepreter, add following to .emacs.local
-;(custom-set-variables '(jedi:server-command `("python3" ,jedi:server-script)))
+;(custom-set-variables 
+;  '(jedi:server-command `("python3" ,jedi:server-script))
+;  '(jedi:environment-virtualenv '("virtualenv" "-p" "/usr/bin/python3"))
+;)
 (defun add-jedi-company ()
   (when (boundp 'company-backends)
     (add-to-list 'company-backends 'company-jedi)))
