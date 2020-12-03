@@ -29,7 +29,10 @@
 	    (set (make-local-variable 'compile-command) (format "make -f %s"  (get-closest-pathname))) ; use the closest makefile
         (bind-rtags-keymapping)
 	    (c-toggle-hungry-state)
-	    (c-toggle-auto-newline)))
+	    (c-toggle-auto-newline)
+        (bind-switch-between-header-impl)
+        (c-toggle-comment-style 1)  ; use block comment
+))
 
 
 (add-hook 'c-mode-hook
@@ -38,7 +41,6 @@
 
 (add-hook 'c++-mode-hook
 	  (lambda ()
-	    (c-set-style "c++-style")
-	    (bind-switch-between-header-impl)))
+	    (c-set-style "c++-style")))
 
 (provide 'prog_cpp)

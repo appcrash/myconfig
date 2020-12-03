@@ -76,6 +76,7 @@
 ;yasnippet
 (require 'yasnippet)
 (yas-global-mode 1)
+(setq yas-snippet-dirs (append yas-snippet-dirs "~/.emacs.d/snippets"))
 
 ;flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
