@@ -64,7 +64,7 @@
     ))
 
 ;org mode
-(global-set-key (kbd "<f12>") (lambda () (interactive) (find-file mytodo_file)))
+(global-set-key (kbd "<f12>") (lambda () (interactive) (find-file (get_mytodo_file))))
 (add-hook 'org-mode-hook (lambda ()
   	(local-set-key "\C-cl" 'org-store-link)
 	(local-set-key "\C-cc" 'org-capture)
