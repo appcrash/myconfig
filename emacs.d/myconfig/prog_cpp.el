@@ -9,7 +9,7 @@
      (c-basic-offset . 4)
      (c-cleanup-list . (brace-else-brace
                         brace-elseif-brace
-                        empty-defun-braces   ; if function def is empty, compact the braces together
+                        ;empty-defun-braces   ; if function def is empty, compact the braces together
                         defun-close-semi)))
  )
 (c-add-style "c-style" c-style)

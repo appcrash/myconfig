@@ -47,4 +47,7 @@
 	         "\\\\\\1"
 	         ad-return-value)))))
 
+;disable recentering when scrolling
+(setq scroll-conservatively 101)
+
 (provide 'mymisc)
