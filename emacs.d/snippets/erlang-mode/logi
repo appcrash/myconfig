@@ -2,4 +2,3 @@
 # name: logger:info
 # --
 logger:info("$1 ~p",[$2])$0
-
