@@ -10,6 +10,10 @@ set foldmethod=syntax
 set nofoldenable
 let Tlist_Auto_Open = 1
 
+
+" no trailing newline
+set nofixeol
+
 " allow switching buffer without saving
 set hidden
 
