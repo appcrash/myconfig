@@ -1,0 +1,35 @@
+# -*- mode: snippet -*-
+# name: supervisor module
+# --
+-module(`(file-name-base (buffer-file-name))`).
+-behaviour(supervisor).
+-export([init/1,start_link/0]).
+
+start_link() ->
+    supervisor:start_link({local, ?MODULE}, ?MODULE, []).
+
+%% sup_flags() = #{strategy => strategy(),         % optional
+%%                 intensity => non_neg_integer(), % optional
+%%                 period => pos_integer()}        % optional
+%% child_spec() = #{id => child_id(),       % mandatory
+%%                  start => mfargs(),      % mandatory
+%%                  restart => restart(),   % optional
+%%                  shutdown => shutdown(), % optional
+%%                  type => worker(),       % optional
+%%                  modules => modules()}   % optional
+init([]) ->
+    SupFlags = #{strategy => one_for_all,
+                 intensity => 20,
+                 period => 1},
+    ChildSpecs = [
+    #{
+      id => $1,
+      start => {$1,start_link,[]},
+      restart => permanent,
+      shutdown => infinity,
+      type => worker,
+      modules => [$1]
+    }
+    ],
+    {ok, {SupFlags, ChildSpecs}}.
+$0
