@@ -42,9 +42,10 @@
  '(ecb-layout-name "left6")
  '(ecb-options-version "2.40")
  '(initial-buffer-choice t)
+ '(jedi:environment-virtualenv (quote ("virtualenv" "-p" "/usr/bin/python3")))
  '(package-selected-packages
    (quote
-    (helm company-jedi pymacs company-rtags company doom-modeline doom-themes smartparens auctex geiser flycheck jedi yasnippet-snippets slime session elisp-slime-nav)))
+    (idle-highlight-in-visible-buffers-mode highlight-symbol helm company-jedi pymacs company-rtags company doom-modeline doom-themes smartparens auctex geiser flycheck jedi yasnippet-snippets slime session elisp-slime-nav)))
  '(session-use-package t nil (session)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

@@ -1,8 +1,7 @@
 (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("marmalade" . "https://marmalade-repo.org/packages/")
                          ("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
-(setq url-http-attempt-keepalives nil)
+;(setq url-http-attempt-keepalives nil)
 
 ;ibuffer config
 (require 'ibuf-ext)
@@ -84,6 +83,13 @@
 ;flyspell
 (dolist (hook '(LaTeX-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
+
+;idle-highlight-mode
+(require 'idle-highlight-in-visible-buffers-mode)
+(dolist (hook '(c-mode-common-hook python-mode-hook erlang-mode-hook))
+  (add-hook hook (lambda () (idle-highlight-in-visible-buffers-mode t))))
+(add-hook 'window-configuration-change-hook (lambda () (set-face-attribute 'idle-highlight-in-visible-buffers nil :foreground "yellow"
+		    :background (face-attribute 'default :background) :weight 'ultra-bold :underline t)))
 
 ;smartparens
 (require 'smartparens)
