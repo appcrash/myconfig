@@ -1,5 +1,10 @@
-(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-                         ("melpa" . "https://melpa.org/packages/")))
+(require 'package)
+;(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+;                         ("melpa" . "https://stable.melpa.org/packages/")))
+
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
+
 (package-initialize)
 ;(setq url-http-attempt-keepalives nil)
 
