@@ -33,6 +33,9 @@
 (setq auto-save-file-name-transforms
       '((".*" "~/.emacs.d/auto-save-files/" t)))
 
+;always keep file in sync
+(global-auto-revert-mode t)
+
 ;disable creating lock files like ".#xxxx"
 (setq create-lockfiles nil)
 
