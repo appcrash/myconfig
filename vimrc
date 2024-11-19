@@ -25,15 +25,13 @@ map ∂ <C-d>
 map ∑ <C-w>
 map † <C-t>
 
-"imap  <F1> <C-O>:tabprevious<CR>
-"imap  <F2> <C-O>:tabnext<CR>
-"nmap  <F1> :tabprevious<CR>
-"nmap  <F2> :tabnext<CR>
+" map Alt+Left
+nnoremap <Esc>[1;3D :bp!<CR>
+inoremap <Esc>[1;3D <C-O>:bp!<CR>
+" map Alt+Right
+nnoremap <Esc>[1;3C :bn!<CR>
+inoremap <Esc>[1;3C <C-O>:bn!<CR>
 
-imap  <F1> <C-O>:bp<CR>
-imap  <F2> <C-O>:bn<CR>
-nmap  <F1> :bp<CR>
-nmap  <F2> :bn<CR>
 
 " quickfix window
 nnoremap <leader>cw :cw<CR>
